@@ -19,7 +19,7 @@ namespace CommandAPI.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Command>> GetAction()
         {
-            var commandItems = _repository.GetAllCommnds();
+            var commandItems = _repository.GetAllCommands();
             
             return Ok(commandItems);
         }
