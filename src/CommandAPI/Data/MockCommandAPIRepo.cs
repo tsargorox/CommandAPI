@@ -22,17 +22,17 @@ namespace CommandAPI.Data
                 new Command{
                     Id=0, 
                     HowTo="How to generate a migration", 
-                    ConnandLine="dotnet ef migrations add <Name ofMigration>", 
+                    CommandLine="dotnet ef migrations add <Name ofMigration>", 
                     Platform=".Net Core EF"},
                 new Command{
                     Id=1, 
                     HowTo="Run Migrations", 
-                    ConnandLine="dotnet ef database update", 
+                    CommandLine="dotnet ef database update", 
                     Platform=".Net Core EF"},
                 new Command{
                     Id=2, 
                     HowTo="List active migrations", 
-                    ConnandLine="dotnet ef migrations list", 
+                    CommandLine="dotnet ef migrations list", 
                     Platform=".Net Core EF"},
             };
             return commands;
@@ -43,7 +43,7 @@ namespace CommandAPI.Data
             return new Command{
                 Id=0, 
                 HowTo="How to generate a migration", 
-                ConnandLine="dotnet ef migrations add <Name ofMigration>", 
+                CommandLine="dotnet ef migrations add <Name ofMigration>", 
                 Platform=".Net Core EF"};
         }
 

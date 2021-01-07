@@ -13,6 +13,6 @@ namespace CommandAPI.Models
         [Required]
         public string Platform {get; set;}
         [Required]
-        public string ConnandLine {get; set;}
+        public string CommandLine {get; set;}
     }
 }
