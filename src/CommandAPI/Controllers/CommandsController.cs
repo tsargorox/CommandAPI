@@ -22,7 +22,7 @@ namespace CommandAPI.Controllers
         } 
         
         [HttpGet]
-        public ActionResult<IEnumerable<CommandReadDto>> GetAction()
+        public ActionResult<IEnumerable<CommandReadDto>> GetAllCommands()
         {
             var commandItems = _repository.GetAllCommands();
             
@@ -83,6 +83,20 @@ namespace CommandAPI.Controllers
             _mapper.Map(commandToPatch, commandModelFromRepo);
             _repository.UpdateCommand(commandModelFromRepo);
             _repository.SaveChanges();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCommand(int id)
+        {
+            var commandModelFromRepo = _repository.GetCommandById(id);
+            if(commandModelFromRepo == null)
+            {
+                return NotFound();
+            }
+            _repository.DeleteCommand(commandModelFromRepo);
+            _repository.SaveChanges();
+
             return NoContent();
         }
     }
